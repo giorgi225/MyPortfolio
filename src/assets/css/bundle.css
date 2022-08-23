@@ -1,0 +1,50 @@
+/*400*/
+@font-face {
+    font-family: 'DynaPuff-Regular';
+    src: url('../fonts/secondary/DynaPuff-Regular.ttf');
+}
+.s-f-400 {
+    font-family: "DynaPuff-Regular";
+}
+/*500*/
+@font-face {
+    font-family: 'DynaPuff-Medium';
+    src: url('../fonts/secondary/DynaPuff-Medium.ttf');
+}
+.s-f-500 {
+    font-family: "DynaPuff-Medium";
+}
+/*600*/
+@font-face {
+    font-family: 'DynaPuff-SemiBold';
+    src: url('../fonts/secondary/DynaPuff-SemiBold.ttf');
+}
+.s-f-600 {
+    font-family: "DynaPuff-SemiBold";
+}
+/*700*/
+@font-face {
+    font-family: 'DynaPuff-Bold';
+    src: url('../fonts/secondary/DynaPuff-Bold.ttf');
+}
+.s-f-700 {
+    font-family: "DynaPuff-Bold";
+}
+
+
+/*ROBOTO*/
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/main/Roboto-Regular.ttf');
+}
+.m-f-400 {
+    font-family: "Roboto-Regular";
+}
+/*500*/
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../fonts/main/Roboto-Medium.ttf');
+}
+.m-f-500 {
+    font-family: "Roboto-Medium";
+}
