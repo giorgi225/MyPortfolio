@@ -93,7 +93,7 @@ a.forEach(item => {
         width: 10px;
         height: 10px;
         border-radius: 100%;
-        background-color: #2c2d32;
+        background-color: #2c2d3296;
         position: fixed;
         transform: translate(-50%, -50%);
         pointer-events: none;
@@ -105,7 +105,7 @@ a.forEach(item => {
       opacity: 1;
     }
     .hover {
-        background-color: #2c2d32;
+        background-color: #2c2d3296;
         /* background: red; */
         opacity: 0.4;
 }

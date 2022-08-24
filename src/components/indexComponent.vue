@@ -36,15 +36,37 @@
             </a>
         </div>
         <div class="actions">
-            <a href="#" class="action">
+            <button @click="downloadPdf()" class="action">
                 <p class="text m-f-400">Download CV</p>
-            </a>
-            <a href="#" class="action">
-                <p class="text m-f-400">Contact Me</p>
-            </a>
+            </button>
         </div>
     </div>
 </template>
+
+<script>
+    import axios from 'axios'
+
+    export default {
+        methods: {
+            downloadPdf() {
+                axios({
+                    url:"http://localhost:8080/alo.pdf",
+                    method:'get',
+                    responseType:'blob',
+                }).then((response)=> {
+                    var url = window.URL.createObjectURL(new Blob([response.data]))
+                    var link = document.createElement('a')
+                    link.href = url;
+
+                    link.setAttribute('download', 'alo.pdf')
+                    document.body.appendChild(link)
+
+                    link.click()
+                })
+            }
+        }
+    }
+</script>
 
 
 <style scoped>
@@ -94,7 +116,7 @@
     }
 
     .social-platforms a {
-        position:relative;
+        position: relative;
         display: flex;
     }
 
@@ -103,11 +125,12 @@
     }
 
     .social-platforms a svg path {
-        fill:#484959;
+        fill: #484959;
         transition: 0.3s;
     }
+
     .social-platforms a:hover svg path {
-        fill:rgb(255, 137, 97);
+        fill: rgb(255, 137, 97);
         transition: 0.3s;
     }
 
@@ -129,30 +152,34 @@
         color: #373642;
         margin-top: 5px;
     }
+
     .actions {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
+
     .actions .action {
         padding: 15px;
-        width:90%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #FFF;
         border-top: 1px solid #f2e5e5;
-        text-decoration:none;
-        transition:all 0.3s ease-in-out;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
     }
+
     .actions .action:hover {
-        box-shadow:0px 0px 3px rgba(0, 0, 0, 0.3);
-        transition:all 0.3s ease-in-out;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
     }
+
     .actions .action:not(:last-of-type) {
         border-right: 1px solid #f2e5e5;
     }

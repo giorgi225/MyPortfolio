@@ -1,11 +1,22 @@
 <template>
-    <div class="ct content" id="projectCont">
-        <div>
+    <div class="content" id="projectCont">
+        <div class="ct">
             <div class="content-title-d">
                 <h3 class="m-f-500">Projects</h3>
             </div>
             <div class="gr-2">
-                <a href="#" class="project-section">
+                <a href="https://wave-solution.com/" target="_blank" class="project-section">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="@/assets/imgs/pr-4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="project-desc">
+                        <h4 class="m-f-500 mt-11 mb-6">Wavesolution</h4>
+                        <p class="m-f-400">Html, Css, Javascript, Bootstrap, Jquery</p>
+                    </div>
+                </a>
+                <a href="https://magicslider.netlify.app/" target="_blank" class="project-section">
                     <div class="project-item">
                         <div class="project-img">
                             <img src="@/assets/imgs/pr-1.png" alt="">
@@ -17,7 +28,7 @@
                             slider</p>
                     </div>
                 </a>
-                <a href="#" class="project-section">
+                <a href="https://touragency22.netlify.app/" target="_blank" class="project-section">
                     <div class="project-item">
                         <div class="project-img">
                             <img src="@/assets/imgs/pr-2.png" alt="">
@@ -28,7 +39,7 @@
                         <p class="m-f-400">Html, Css, Javascript</p>
                     </div>
                 </a>
-                 <a href="#" class="project-section">
+                 <a href="https://facebook20.netlify.app/" target="_blank" class="project-section">
                     <div class="project-item">
                         <div class="project-img">
                             <img src="@/assets/imgs/pr-3.png" alt="">

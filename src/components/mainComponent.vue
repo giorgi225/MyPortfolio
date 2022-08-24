@@ -4,12 +4,13 @@
             <navComponent @sendData="getData" />
         </div>
         <div class="main-side">
-            <indexComponent />
+            <indexComponent @sendData="getData" />
         </div>
         <div id="portolio-content">
             <aboutComponent v-if="changed=='about' " />
             <resumeComponent v-if="changed=='resume'" />
-            <ProjectsComponent v-if="changed=='project'"/>
+            <ProjectsComponent v-if="changed=='project'" />
+            <ContactComponent v-if="changed=='contact' || changed=='contact2'" />
         </div>
     </div>
 </template>
@@ -20,15 +21,18 @@
     import aboutComponent from "./aboutComponent.vue";
     import resumeComponent from "./resumeComponent.vue"
     import ProjectsComponent from "./projectsComponent.vue";
-    
+    import ContactComponent from "./contactComponent.vue";
+
+
     export default {
         components: {
-    navComponent,
-    indexComponent,
-    aboutComponent,
-    resumeComponent,
-    ProjectsComponent
-},
+            navComponent,
+            indexComponent,
+            aboutComponent,
+            resumeComponent,
+            ProjectsComponent,
+            ContactComponent
+        },
         data() {
             return {
                 changed: 'about',
@@ -37,6 +41,7 @@
         methods: {
             getData(val) {
                 this.changed = val
+                console.log(this.changed)
             }
         }
     }
