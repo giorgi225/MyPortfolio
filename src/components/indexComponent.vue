@@ -36,35 +36,33 @@
             </a>
         </div>
         <div class="actions">
-            <a href="#" @click.prevent="downloadFile" class="action">
+            <a href="#" @click.prevent="downloadCv" class="action">
                 <p class="text m-f-400">Download CV</p>
             </a>
+  <pdf src="@/assets/files/cv.pdf"></pdf>
         </div>
     </div>
 </template>
 
 <script>
-    // import axios from 'axios'
+    import axios from 'axios'
 
-    export default {
+export default {
         methods: {
-            async downloadFile() {
-                fetch(location.origin+'/cv.pdf')
-                    .then(resp => resp.blob())
-                    .then(blob => {
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.style.display = 'none';
-                        a.href = url;
-                        // the filename you want
-                        
-                        a.download = 'cv.pdf';
-                        document.body.appendChild(a);
-                        a.click();
-                        window.URL.revokeObjectURL(url);
-
-                    })
-            },
+            downloadCv() {
+                axios({
+                    url:location.origin+'/cv.pdf',
+                    method:'GET',
+                    responseType:'blob'
+                }).then((response)=> {
+                    var fileUrl = window.URL.createObjectURL(new Blob([response.data]))
+                    var fileLink = document.createElement('a')
+                    fileLink.href = fileUrl
+                    fileLink.setAttribute('download', 'cv.pdf')
+                    document.body.appendChild(fileLink)
+                    fileLink.click()
+                })
+            }
         },
     }
 </script>
