@@ -49,7 +49,7 @@
     export default {
         methods: {
             async downloadFile() {
-                fetch('http://localhost:8080/cv.pdf')
+                fetch(location.origin+'/cv.pdf')
                     .then(resp => resp.blob())
                     .then(blob => {
                         const url = window.URL.createObjectURL(blob);
@@ -62,6 +62,7 @@
                         document.body.appendChild(a);
                         a.click();
                         window.URL.revokeObjectURL(url);
+
                     })
             },
         },
