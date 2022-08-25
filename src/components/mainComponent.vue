@@ -41,7 +41,6 @@
         methods: {
             getData(val) {
                 this.changed = val
-                console.log(this.changed)
             }
         }
     }

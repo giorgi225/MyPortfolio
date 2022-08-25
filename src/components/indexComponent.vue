@@ -36,35 +36,35 @@
             </a>
         </div>
         <div class="actions">
-            <button @click="downloadPdf()" class="action">
+            <a href="#" @click.prevent="downloadFile" class="action">
                 <p class="text m-f-400">Download CV</p>
-            </button>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
+    // import axios from 'axios'
 
     export default {
         methods: {
-            downloadPdf() {
-                axios({
-                    url:"http://localhost:8080/alo.pdf",
-                    method:'get',
-                    responseType:'blob',
-                }).then((response)=> {
-                    var url = window.URL.createObjectURL(new Blob([response.data]))
-                    var link = document.createElement('a')
-                    link.href = url;
-
-                    link.setAttribute('download', 'alo.pdf')
-                    document.body.appendChild(link)
-
-                    link.click()
-                })
-            }
-        }
+            async downloadFile() {
+                fetch('http://localhost:8080/cv.pdf')
+                    .then(resp => resp.blob())
+                    .then(blob => {
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        // the filename you want
+                        
+                        a.download = 'cv.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                    })
+            },
+        },
     }
 </script>
 
