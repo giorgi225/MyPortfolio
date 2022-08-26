@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="profile-info">
-            <h3 class="title s-f-400">Giorgi Shalamberidze</h3>
+            <h3 class="title s-f-400">Gigi Shalamberidze</h3>
             <p class="proffesion m-f-400">Front-end Developer</p>
         </div>
         <div class="social-platforms">
@@ -39,7 +39,7 @@
             <a href="#" @click.prevent="downloadCv" class="action">
                 <p class="text m-f-400">Download CV</p>
             </a>
-  <pdf src="@/assets/files/cv.pdf"></pdf>
+            <pdf src="@/assets/files/cv.pdf"></pdf>
         </div>
     </div>
 </template>
@@ -47,14 +47,15 @@
 <script>
     import axios from 'axios'
 
-export default {
+    export default {
         methods: {
             downloadCv() {
                 axios({
-                    url:location.origin+'/cv.pdf',
-                    method:'GET',
-                    responseType:'blob'
-                }).then((response)=> {
+                    baseURL: process.env.BASE_URL + "cv.pdf",
+                    method: 'GET',
+                    responseType: 'blob'
+                }).then((response) => {
+                    console.log(process.env.BASE_URL + 'public/cv.pdf')
                     var fileUrl = window.URL.createObjectURL(new Blob([response.data]))
                     var fileLink = document.createElement('a')
                     fileLink.href = fileUrl
