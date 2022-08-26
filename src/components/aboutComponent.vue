@@ -60,7 +60,7 @@
                             fill="#FF7171" />
                     </svg>
 
-                    I were in front-end developer in the ToBeBroker company.
+                    I was front-end developer in the ToBeBroker company.
                 </p>
             </div>
             <div class="grid-2 gap-30">
