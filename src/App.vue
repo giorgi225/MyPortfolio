@@ -10,18 +10,47 @@
     <mainComponent />
   </div>
 
-  <CustomCursor />
+  <CustomCursor v-if="!size" />
+  <LoaderComponent v-if="!loader" />
 </template>
 
 <script>
   import CustomCursor from "@/components/CustomCursor.vue";
   import mainComponent from "@/components/mainComponent.vue";
+  import LoaderComponent from "@/components/loaderComponent.vue"
 
   export default {
+    data() {
+      return {
+        loader: false,
+        size: false,
+      }
+    },
     components: {
       CustomCursor,
       mainComponent,
+      LoaderComponent,
     },
+    mounted() {
+      this.load()
+      if (window.innerWidth <= 1090) {
+        this.size = true;
+      } else {
+        this.size = false;
+      }
+      window.addEventListener('resize', () => {
+        if (window.innerWidth <= 1090) {
+          this.size = true;
+        } else {
+          this.size = false;
+        }
+      })
+    },
+    methods: {
+      load() {
+        this.loader = true
+      }
+    }
   }
 </script>
 
@@ -36,8 +65,9 @@
   body {
     scroll-behavior: smooth;
   }
+
   html {
-        scroll-behavior: smooth;
+    scroll-behavior: smooth;
 
   }
 
@@ -167,12 +197,14 @@
   }
 
   .fx-center {
-    display:flex;
+    display: flex;
     align-items: center;
   }
+
   .mr-11 {
     margin-right: 11px;
   }
+
   .content-title-d h3 {
     color: #383946;
     text-transform: uppercase;
@@ -203,43 +235,52 @@
     width: 95%;
     background: linear-gradient(45deg, #6e6f84c4, #ffffff12);
   }
+
   .ct {
-    
+
     position: relative;
     width: 100%;
     height: 100%;
     /* background: #FFF; */
     overflow: auto;
     padding: 16px 0px 17px 0px;
-}
-.content {
+  }
+
+  .content {
     background: #FFF;
 
-} 
+  }
+
   /* width */
-.ct::-webkit-scrollbar {
-  width: 7px;
-}
+  .ct::-webkit-scrollbar {
+    width: 7px;
+  }
 
-/* Track */
-.ct::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  /* Track */
+  .ct::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 6px;
-}
- 
-/* Handle */
-.ct::-webkit-scrollbar-thumb {
-  background: #484959;
-    border-radius: 6px;
-}
+  }
 
-/* Handle on hover */
-.ct::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-   @media screen and (max-width: 610px) {
-        .main-cont {
-          padding:10px;
-        }
+  /* Handle */
+  .ct::-webkit-scrollbar-thumb {
+    background: #484959;
+    border-radius: 6px;
+  }
+
+  /* Handle on hover */
+  .ct::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  @media screen and (max-width:1090px) {
+      * {
+        cursor:default;
+      }
+  }
+  @media screen and (max-width: 610px) {
+    .main-cont {
+      padding: 10px;
     }
+  }
 </style>
