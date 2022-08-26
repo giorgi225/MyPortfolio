@@ -1,16 +1,25 @@
 <template>
     <div class="template">
-        <div class="nav-side">
+        <div class="nav-side" v-if="!size">
             <navComponent @sendData="getData" />
+        </div>
+        <div class="nav-side" v-if="size">
+            <navComponent @sendScrollData="getScroll" />
         </div>
         <div class="main-side">
             <indexComponent @sendData="getData" />
         </div>
-        <div id="portolio-content">
-            <aboutComponent v-if="changed=='about' " />
+        <div id="portolio-content" v-if="!size">
+            <aboutComponent v-if="changed=='about'  " />
             <resumeComponent v-if="changed=='resume'" />
             <ProjectsComponent v-if="changed=='project'" />
             <ContactComponent v-if="changed=='contact' || changed=='contact2'" />
+        </div>
+        <div id="portfolio-content" v-else-if="size">
+            <aboutComponent />
+            <resumeComponent />
+            <ProjectsComponent />
+            <ContactComponent />
         </div>
     </div>
 </template>
@@ -36,12 +45,31 @@
         data() {
             return {
                 changed: 'about',
+                size: false,
             }
         },
         methods: {
             getData(val) {
                 this.changed = val
+            },
+            getScroll(val) {
+                let currentTarget = document.getElementById(val+'Cont')
+                window.scrollBy(0, currentTarget.offsetTop)
             }
+        },
+        mounted() {
+            if (window.innerWidth <= 1090) {
+                this.size = true;
+            } else {
+                this.size = false;
+            }
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 1090) {
+                    this.size = true;
+                } else {
+                    this.size = false;
+                }
+            })
         }
     }
 </script>
@@ -81,5 +109,21 @@
         height: 100%;
         padding: 20px 0px 20px 0px;
         overflow: hidden;
+    }
+
+    @media screen and (max-width:1090px) {
+        .template {
+            flex-direction: column;
+        }
+
+        .nav-side {
+            width: 100%;
+        }
+
+        .main-side {
+            max-width: 100%;
+            height: 80%;
+            margin: 0 auto;
+        }
     }
 </style>

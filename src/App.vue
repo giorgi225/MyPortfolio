@@ -33,7 +33,13 @@
     box-sizing: border-box;
   }
 
-  body {}
+  body {
+    scroll-behavior: smooth;
+  }
+  html {
+        scroll-behavior: smooth;
+
+  }
 
   .background {
     position: fixed;
@@ -231,4 +237,9 @@
 .ct::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+   @media screen and (max-width: 610px) {
+        .main-cont {
+          padding:10px;
+        }
+    }
 </style>

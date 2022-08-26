@@ -39,7 +39,7 @@
                         <p class="m-f-400">Html, Css, Javascript</p>
                     </div>
                 </a>
-                 <a href="https://facebook20.netlify.app/" target="_blank" class="project-section">
+                <a href="https://facebook20.netlify.app/" target="_blank" class="project-section">
                     <div class="project-item">
                         <div class="project-img">
                             <img src="@/assets/imgs/pr-3.png" alt="">
@@ -90,7 +90,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 30px;
-        padding:22px;
+        padding: 22px;
     }
 
     .content.active {
@@ -107,13 +107,13 @@
         display: flex;
         flex-direction: column;
         margin-top: 15px;
-                transition:0.3s;
-                text-decoration:none;
+        transition: 0.3s;
+        text-decoration: none;
     }
 
     .project-section:hover {
         box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
-        transition:0.3s;
+        transition: 0.3s;
     }
 
     .project-item {
@@ -124,24 +124,39 @@
     .project-item .project-img {
         position: relative;
         width: 100%;
-        height:100%;
+        height: 100%;
         max-height: 300px;
     }
 
     .project-desc h4 {
-        color:#373642;
+        color: #373642;
     }
 
     .project-desc p {
-        color:#373642;
+        color: #373642;
     }
 
     .project-item .project-img img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
-    border-radius: 2px;
-}
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
+        border-radius: 2px;
+    }
+
+    @media screen and (max-width:1090px) {
+        .content {
+            position: relative;
+            width: 100%;
+            height: auto !important;
+            background: #fff;
+            padding: 5px 10px;
+            margin: 15px 0px;
+            transform: translateX(0);
+            opacity: 1;
+            transition: 0.5s;
+            z-index: 999;
+        }
+    }
 </style>

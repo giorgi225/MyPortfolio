@@ -4,13 +4,15 @@
             <div class="content-title-d">
                 <h3 class="m-f-500">Contact</h3>
             </div>
-              <div class="grid-2 gap-30">
-            <p class="text m-f-500">Email .... <a href="mailto:gigishalamberidze9@gmail.com" class="gmail m-f-400">gigishalamberidze9@gmail.com</a> </p>
-            <p class="text m-f-500">Freelance .... <span class="green m-f-400">Available</span> </p>
-            <p class="text m-f-500">Linkedin .... <a href="https://www.linkedin.com/in/giorgi-shalamberidze-3b163520b/" target="_blank" class="m-f-400 gmail">Giorgi Shalamberidze</a> </p>
-            <p class="text m-f-500">Phone .... <a class="gmail m-f-400"
-                    href="tel:574175188">574-17-51-88</a></p>
-        </div>
+            <div class="grid-2 gap-30">
+                <p class="text m-f-500">Email .... <a href="mailto:gigishalamberidze9@gmail.com"
+                        class="gmail m-f-400">gigishalamberidze9@gmail.com</a> </p>
+                <p class="text m-f-500">Freelance .... <span class="green m-f-400">Available</span> </p>
+                <p class="text m-f-500">Linkedin .... <a
+                        href="https://www.linkedin.com/in/giorgi-shalamberidze-3b163520b/" target="_blank"
+                        class="m-f-400 gmail">Giorgi Shalamberidze</a> </p>
+                <p class="text m-f-500">Phone .... <a class="gmail m-f-400" href="tel:574175188">574-17-51-88</a></p>
+            </div>
         </div>
     </div>
 </template>
@@ -53,7 +55,7 @@
         opacity: 1;
     }
 
- .grid-2 {
+    .grid-2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 0px 20px;
@@ -67,11 +69,26 @@
         color: #201d23;
     }
 
-     .gmail {
+    .gmail {
         color: #da8c45;
     }
 
     .green {
         color: #47b841;
+    }
+
+    @media screen and (max-width:1090px) {
+        .content {
+            position: relative;
+            width: 100%;
+            height: auto !important;
+            background: #fff;
+            padding: 5px 10px;
+            margin: 15px 0px;
+            transform: translateX(0);
+            opacity: 1;
+            transition: 0.5s;
+            z-index: 999;
+        }
     }
 </style>
