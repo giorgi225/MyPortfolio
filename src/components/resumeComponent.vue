@@ -19,11 +19,11 @@
                 </div>
                 <div class="resume-items">
                     <div class="resume-item border-line-h active">
-                        <div class="date">Mar 2022 - Present</div>
+                        <div class="date">Mar 2022 - Aug 2022</div>
                         <div class="name m-f-500">Front-end developer</div>
                         <div class="company m-f-400">ToBeBroker · Full-time · Remote</div>
                         <p class="m-f-400">
-                            I work as Front-end Developer in ToBeBroker Company since 2022.
+                            I was Front-end Developer in ToBeBroker Company since Aug, 2022.
                         </p>
                     </div>
                 </div>

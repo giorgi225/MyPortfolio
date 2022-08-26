@@ -16,18 +16,6 @@
                         <p class="m-f-400">Html, Css, Javascript, Bootstrap, Jquery</p>
                     </div>
                 </a>
-                <a href="https://magicslider.netlify.app/" target="_blank" class="project-section">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <img src="@/assets/imgs/pr-1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="project-desc">
-                        <h4 class="m-f-500 mt-11 mb-6">Slider Plugin vanilla js</h4>
-                        <p class="m-f-400">vanilla js(no jQuery!) Plugin that lets you create a beautiful responsive
-                            slider</p>
-                    </div>
-                </a>
                 <a href="https://touragency22.netlify.app/" target="_blank" class="project-section">
                     <div class="project-item">
                         <div class="project-img">
@@ -37,17 +25,6 @@
                     <div class="project-desc">
                         <h4 class="m-f-500 mt-11 mb-6">Tour Agency Landing Page</h4>
                         <p class="m-f-400">Html, Css, Javascript</p>
-                    </div>
-                </a>
-                <a href="https://facebook20.netlify.app/" target="_blank" class="project-section">
-                    <div class="project-item">
-                        <div class="project-img">
-                            <img src="@/assets/imgs/pr-3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="project-desc">
-                        <h4 class="m-f-500 mt-11 mb-6">Facebook Clone</h4>
-                        <p class="m-f-400">Html, Css, Javascript, Bootstrap, Jquery</p>
                     </div>
                 </a>
             </div>
