@@ -140,4 +140,9 @@
             z-index: 999;
         }
     }
+    @media screen and (max-width:500px) {
+        .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    }
 </style>
