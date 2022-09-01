@@ -49,6 +49,7 @@
 
     methods: {
       load() {
+        console.log('loader')
         this.loader = false
       }
     }
