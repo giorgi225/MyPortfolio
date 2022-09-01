@@ -22,7 +22,7 @@
   export default {
     data() {
       return {
-        loader: false,
+        loader: true,
         size: false,
       }
     },
