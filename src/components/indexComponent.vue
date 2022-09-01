@@ -183,4 +183,5 @@
     .actions .action:not(:last-of-type) {
         border-right: 1px solid #f2e5e5;
     }
+
 </style>

@@ -11,7 +11,7 @@
   </div>
 
   <CustomCursor v-if="!size" />
-  <LoaderComponent v-if="!loader" />
+  <LoaderComponent  v-if="loader"/>
 </template>
 
 <script>
@@ -32,7 +32,6 @@
       LoaderComponent,
     },
     mounted() {
-      this.load()
       if (window.innerWidth <= 1090) {
         this.size = true;
       } else {
@@ -45,10 +44,12 @@
           this.size = false;
         }
       })
+      this.load()
     },
+
     methods: {
       load() {
-        this.loader = true
+        this.loader = false
       }
     }
   }
